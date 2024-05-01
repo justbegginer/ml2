@@ -35,7 +35,8 @@ history = model.fit(train_images, train_labels,
 
 # Оценка модели
 test_loss, test_acc = model.evaluate(test_images, test_labels)
-print(f'Тестовая точность: {test_acc}')
+print(f'Тестовая точность: {test_acc}\n'
+      f'Тестовые потери: {test_loss}')
 
 # Визуализация истории обучения
 plt.plot(history.history['accuracy'], label='accuracy')
@@ -44,3 +45,4 @@ plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.ylim([0, 1])
 plt.legend(loc='lower right')
+plt.savefig("accuracy.png")
